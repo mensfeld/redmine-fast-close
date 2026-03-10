@@ -1,0 +1,7 @@
+en:
+  button_fast_close: "Close"
+  text_confirm_close: "Are you sure you want to close this issue?"
+  notice_issue_closed: "Issue successfully closed."
+  error_no_closed_status: "No closed status is defined in Redmine."
+  error_status_transition_not_allowed: "You are not allowed to close this issue."
+  permission_close_issues: "Close issues (fast close)"

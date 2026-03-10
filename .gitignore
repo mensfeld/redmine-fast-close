@@ -1,0 +1,11 @@
+/.bundle
+/vendor/bundle/
+/vendor/ruby/
+*.gem
+*.~
+**.orig
+.DS_Store
+.idea
+**.swp
+.yardoc
+/coverage/
