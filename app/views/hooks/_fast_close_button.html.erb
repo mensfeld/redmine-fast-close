@@ -11,8 +11,15 @@
         if (!hook) return;
 
         var link = hook.querySelector('a');
+        var issueH2 = document.querySelector('div.issue h2');
         var contextual = document.querySelector('div.issue div.contextual') ||
                          document.querySelector('.issue .contextual');
+
+        if (!contextual && issueH2) {
+          contextual = document.createElement('div');
+          contextual.className = 'contextual';
+          issueH2.parentNode.insertBefore(contextual, issueH2);
+        }
 
         if (contextual && link) {
           contextual.appendChild(link);
