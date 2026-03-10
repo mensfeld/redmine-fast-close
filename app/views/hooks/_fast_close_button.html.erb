@@ -18,7 +18,7 @@
         if (!contextual && issueH2) {
           contextual = document.createElement('div');
           contextual.className = 'contextual';
-          issueH2.parentNode.insertBefore(contextual, issueH2);
+          issueH2.insertBefore(contextual, issueH2.firstChild);
         }
 
         if (contextual && link) {
