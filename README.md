@@ -28,12 +28,6 @@ git clone https://github.com/mensfeld/redmine-fast-close.git plugins/redmine_fas
 
 No migrations required — this plugin only adds a UI feature.
 
-## Configuration
-
-1. Go to **Administration → Roles and permissions**
-2. Enable **"Close issues (fast close)"** for the roles that should see the button
-3. In each project, go to **Settings → Modules** and enable **Fast close**
-
 ## License
 
 MIT License. See [LICENSE](LICENSE) for details.
