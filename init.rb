@@ -10,8 +10,4 @@ Redmine::Plugin.register :redmine_fast_close do
   url "https://github.com/mensfeld/redmine-fast-close"
 
   requires_redmine version_or_higher: "5.0"
-
-  project_module :fast_close do
-    permission :close_issues, { fast_close: [:close] }, require: :member
-  end
 end

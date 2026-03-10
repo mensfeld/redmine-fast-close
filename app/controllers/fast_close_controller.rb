@@ -2,9 +2,10 @@
 
 # Controller that handles one-click issue closing.
 # Finds the first closed status allowed by the workflow and transitions the issue to it.
+# Authorization relies on Redmine's workflow — if the user can transition to a closed status,
+# they can use this shortcut.
 class FastCloseController < ApplicationController
   before_action :find_issue
-  before_action :authorize
 
   # Closes the issue by transitioning it to the first available closed status.
   # Validates that a closed status exists and that the current user is allowed to use it.
@@ -38,7 +39,7 @@ class FastCloseController < ApplicationController
 
   private
 
-  # Finds the issue from the URL parameter and sets the project context for authorization.
+  # Finds the issue from the URL parameter and sets the project context.
   def find_issue
     @issue = Issue.find(params[:id])
     @project = @issue.project
