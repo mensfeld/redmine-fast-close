@@ -24,9 +24,10 @@ Closing an issue in Redmine requires: Edit → change status → Save. This plug
 ```bash
 cd /path/to/redmine
 git clone https://github.com/mensfeld/redmine-fast-close.git plugins/redmine_fast_close
-bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 # Restart Redmine
 ```
+
+No migrations required — this plugin only adds a UI feature.
 
 ## Configuration
 
