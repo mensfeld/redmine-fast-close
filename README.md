@@ -11,7 +11,6 @@ Closing an issue in Redmine requires: Edit → change status → Save. This plug
 - One-click close button on the issue detail view
 - Respects Redmine workflow — button only appears when the user is allowed to transition to a closed status
 - Proper journal entry is created for the status change
-- Confirmation dialog before closing
 - Localized in English and Polish (falls back to English for other languages)
 
 ## Requirements
