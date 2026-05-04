@@ -26,5 +26,8 @@
   ],
   "labels": [
     "dependencies"
-  ]
+  ],
+  "lockFileMaintenance": {
+    "enabled": true
+  }
 }
