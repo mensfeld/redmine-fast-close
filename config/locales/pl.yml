@@ -3,3 +3,5 @@ pl:
   notice_issue_closed: "Zgłoszenie zostało zamknięte."
   error_no_closed_status: "Brak zdefiniowanego statusu zamkniętego w Redmine."
   error_status_transition_not_allowed: "Nie masz uprawnień do zamknięcia tego zgłoszenia."
+  label_closed_status: "Docelowy status zamknięcia"
+  label_default_closed_status: "Pierwszy status zamknięty (domyślny)"

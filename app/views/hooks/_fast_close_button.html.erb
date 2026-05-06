@@ -1,5 +1,12 @@
 <% if @issue && !@issue.closed? %>
-  <% closed_status = IssueStatus.where(is_closed: true).order(:position).first %>
+  <%
+    configured_id = Setting.plugin_redmine_fast_close['closed_status_id']
+    closed_status = if configured_id.present?
+                      IssueStatus.find_by(id: configured_id, is_closed: true)
+                    else
+                      IssueStatus.where(is_closed: true).order(:position).first
+                    end
+  %>
   <% if closed_status && @issue.new_statuses_allowed_to(User.current).include?(closed_status) %>
     <div id="fast-close-hook">
       <%= link_to l(:button_fast_close), fast_close_issue_path(@issue), method: :post, class: 'icon icon-close' %>

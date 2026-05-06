@@ -1,0 +1,16 @@
+<table class="form-group">
+  <tr>
+    <td class="name"><label><%= l(:label_closed_status) %></label></td>
+    <td class="value">
+      <select name="settings[closed_status_id]">
+        <option value=""><%= l(:label_default_closed_status) %></option>
+        <% IssueStatus.where(is_closed: true).order(:position).each do |status| %>
+          <option value="<%= status.id %>"
+            <%= ' selected="selected"' if @settings['closed_status_id'].to_s == status.id.to_s %>>
+            <%= status.name %>
+          </option>
+        <% end %>
+      </select>
+    </td>
+  </tr>
+</table>
