@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
 # Controller that handles one-click issue closing.
-# Finds the first closed status allowed by the workflow and transitions the issue to it.
+# Finds the target closed status and transitions the issue to it.
 # Authorization relies on Redmine's workflow — if the user can transition to a closed status,
 # they can use this shortcut.
 class FastCloseController < ApplicationController
   before_action :find_issue
 
-  # Closes the issue by transitioning it to the first available closed status.
+  # Closes the issue by transitioning it to the target closed status.
   # Validates that a closed status exists and that the current user is allowed to use it.
   # Redirects back to the issue with a flash message indicating success or failure.
   def close
-    closed_status = IssueStatus.where(is_closed: true).order(:position).first
+    closed_status = FastCloseStatusResolver.call
 
     unless closed_status
       flash[:error] = l(:error_no_closed_status)

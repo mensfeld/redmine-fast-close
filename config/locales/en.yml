@@ -3,3 +3,5 @@ en:
   notice_issue_closed: "Issue successfully closed."
   error_no_closed_status: "No closed status is defined in Redmine."
   error_status_transition_not_allowed: "You are not allowed to close this issue."
+  label_closed_status: "Target closed status"
+  label_default_closed_status: "First closed status (default)"
