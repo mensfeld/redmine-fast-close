@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.1.0] - 2026-05-05
+## [1.1.0] - 2026-05-06
 
 ### Added
 - Configurable target closed status setting in plugin configuration

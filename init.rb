@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "lib/fast_close_hook_listener"
+require_relative "lib/fast_close_status_resolver"
 
 Redmine::Plugin.register :redmine_fast_close do
   name "Redmine Fast Close"

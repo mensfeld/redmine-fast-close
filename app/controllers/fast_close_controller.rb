@@ -11,7 +11,7 @@ class FastCloseController < ApplicationController
   # Validates that a closed status exists and that the current user is allowed to use it.
   # Redirects back to the issue with a flash message indicating success or failure.
   def close
-    closed_status = target_closed_status
+    closed_status = FastCloseStatusResolver.call
 
     unless closed_status
       flash[:error] = l(:error_no_closed_status)
@@ -38,18 +38,6 @@ class FastCloseController < ApplicationController
   end
 
   private
-
-  # Resolves the target closed status from plugin settings.
-  # If a specific status is configured, uses that; otherwise falls back to first closed by position.
-  def target_closed_status
-    configured_id = Setting.plugin_redmine_fast_close["closed_status_id"]
-
-    if configured_id.present?
-      IssueStatus.find_by(id: configured_id, is_closed: true)
-    else
-      IssueStatus.where(is_closed: true).order(:position).first
-    end
-  end
 
   # Finds the issue from the URL parameter and sets the project context.
   def find_issue
