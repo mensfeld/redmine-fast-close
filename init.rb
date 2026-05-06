@@ -11,6 +11,6 @@ Redmine::Plugin.register :redmine_fast_close do
 
   requires_redmine version_or_higher: "5.0"
 
-  settings default: { 'closed_status_id' => '' },
-           partial: 'settings/fast_close_settings'
+  settings default: { "closed_status_id" => "" },
+    partial: "settings/fast_close_settings"
 end
