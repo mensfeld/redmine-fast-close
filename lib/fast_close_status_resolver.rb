@@ -4,6 +4,8 @@
 # If a specific status is configured and valid, uses that;
 # otherwise falls back to the first closed status by position.
 module FastCloseStatusResolver
+  # Returns the target closed IssueStatus based on plugin settings.
+  # @return [IssueStatus, nil] the configured closed status or first closed status by position
   def self.call
     configured_id = Setting.plugin_redmine_fast_close["closed_status_id"]
 
