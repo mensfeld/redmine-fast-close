@@ -14,6 +14,11 @@
     "enabled": true,
     "pinDigests": true
   },
+  "bundler": {
+    "managerFilePatterns": [
+      "/(^|/)Gemfile\\.lint$/"
+    ]
+  },
   "packageRules": [
     {
       "description": "Group ruby/setup-ruby action with ruby version updates",
